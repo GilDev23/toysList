@@ -59,20 +59,67 @@
               <td><code>https://bored-goat-shorts.cyclic.cloud/toys?s=plush</code></td>
 
           </tr>    
-            <tr>
-              <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys/price?min=10&max=40">/price?min&max</a></code></td>
-              <td>Ability to receive products according to minimum and maximum price range</td>
-              <td><code>https://bored-goat-shorts.cyclic.cloud/toys/price?min=10&max=40</code></td>
+            
+            </tbody>
+    </table>
 
-          </tr>    
+
+    <h3>Endpoint</h3>
+    <p><code>GET /toys/count</code></p>
+    <h3>Query Parameters</h3>
+    <table class="table table-bordered">
+        <thead>
             <tr>
-              <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys/">/count</a></code></td>
+              
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Route</th>
+
+        
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys/">/count</a></code></td>
               <td>Returns the number of records in the collection</td>
               <td><code>https://bored-goat-shorts.cyclic.cloud/toys/price?min=10&max=40</code></td>
 
-          </tr>    
-            </tbody>
+           
+          </tr>
+    
+               </tbody>
     </table>
+
+
+    <h3>Endpoint</h3>
+    <p><code>GET /toys/price</code></p>
+    <h3>Query Parameters</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Route</th>
+
+        
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys/price?min=10&max=40">/price?min&max</a></code></td>
+            <td>Ability to receive products according to minimum and maximum price range</td>
+            <td><code>https://bored-goat-shorts.cyclic.cloud/toys/price?min=10&max=40</code></td>
+
+           
+          </tr>
+    
+               </tbody>
+    </table>
+
+
+    <h3>Endpoint</h3>
+    <p><code>GET /toys/single:id</code></p>
     <h3>Params Parameters</h3>
     <table class="table table-bordered">
         <thead>
@@ -92,6 +139,8 @@
     
                </tbody>
     </table>
+    
+    
 
     <h3>Example Request</h3>
     <pre>
@@ -115,7 +164,7 @@ GET /toys?limit=10&page=2&sort=name&reverse=yes&cat=educational&s=robot
     
     <h3>Endpoint</h3>
     <p><code>POST /toys/addToy</code></p>
-    <h3>Params Parameters</h3>
+    <h3>Parameters</h3>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -151,22 +200,25 @@ GET /toys?limit=10&page=2&sort=name&reverse=yes&cat=educational&s=robot
     </pre>
     <h3>Endpoint</h3>
     <p><code>PUT /toys</code></p>
-    <h3>Params Parameters</h3>
+    <h3> Parameters</h3>
     <table class="table table-bordered">
         <thead>
             <tr>
               
-                <th>Route</th>
-                <th>Description</th>
-                <th>Headers</th>
+                 
+            <th>params</th>
+            <th>Description</th>
+            <th>Headers</th>
+            <th>Route</th>
         
             </tr>
         </thead>
         <tbody>
           <tr>
-            <td><code>https://bored-goat-shorts.cyclic.cloud/toys/:id</code></td>
+            <td>_id</td>
             <td>update a toy by ID</td>
             <td>Required token</td>
+            <td><code>https://bored-goat-shorts.cyclic.cloud/toys/:id</code></td>
            
           </tr>
     
@@ -187,22 +239,24 @@ GET /toys?limit=10&page=2&sort=name&reverse=yes&cat=educational&s=robot
     </pre>
     <h3>Endpoint</h3>
     <p><code>DELETE /toys</code></p>
-    <h3>Params Parameters</h3>
+    <h3>Parameters</h3>
     <table class="table table-bordered">
       <thead>
           <tr>
             
-              <th>Route</th>
-              <th>Description</th>
-              <th>Headers</th>
+            <th>params</th>
+            <th>Description</th>
+            <th>Headers</th>
+            <th>Route</th>
       
           </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>https://bored-goat-shorts.cyclic.cloud/toys/:id</code></td>
-          <td>Dellete a toy by ID</td>
+          <td>_ID</td>
+          <td>Delete a toy by ID</td>
           <td>Required token</td>
+          <td><code>https://bored-goat-shorts.cyclic.cloud/toys/:id</code></td>
          
         </tr>
   
