@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <div class="endpoint-section container">
+    <h2 class="text-center display-3">List Toys</h2>
+    <p class="text-center display-6">Retrieve a list of toys with optional filtering and pagination.</p>
+    
+    <h3>Endpoint</h3>
+    <p><code>GET /toys</code></p>
+
+    <h3>Query Parameters</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+      
+            <tr>
+                <td><code><a href="http://localhost:3001/toys?limit=1">limit</a></code></td>
+                <td>Number of toys to retrieve per page (default is 5).</td>
+            </tr>
+            <tr>
+                <td><code><a href="http://localhost:3001/toys?page=1">page</a></code></td>
+                <td>Page number (default is 1).</td>
+            </tr>
+            <tr>
+                <td><code><a href="http://localhost:3001/toys?sort=price">sort </a></code></td>
+                <td>Sort field (default is "_id").</td>
+            </tr>
+            <tr>
+                <td><code><a href="http://localhost:3001/toys?sort=price&reverse=yes">reverse</a></code></td>
+                <td>Reverse sort order (set to "yes" to reverse, default is ascending).</td>
+            </tr>
+            <tr>
+                <td><code><a href="http://localhost:3001/toys?cat=educational">cat</a></code></td>
+                <td>Filter by toy category.</td>
+            </tr>
+            <tr>
+              <td><code><a href="http://localhost:3001/toys?s=plush">s</a></code></td>
+              <td>Search for toys by name or info.</td>
+          </tr>    
+            <tr>
+              <td><code><a href="http://localhost:3001/toys/price?min=10&max=40">min&max</a></code></td>
+              <td>Ability to receive products according to minimum and maximum price range</td>
+          </tr>    
+            </tbody>
+    </table>
+    <h3>Params Parameters</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              
+                <th>Parameter</th>
+                <th>Description</th>
+        
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code><a href="http://localhost:3001/toys/single/64f6f5581ccdeebae4390472">/single:id</a></code></td>
+            <td>Will pull only one record per ID</td>
+           
+          </tr>
+    
+               </tbody>
+    </table>
+
+    <h3>Example Request</h3>
+    <pre>
+GET /toys?limit=10&page=2&sort=name&reverse=yes&cat=educational&s=robot
+    </pre>
+
+    <h3>Example Response</h3>
+    <pre>
+[
+    {
+        "_id": "1",
+        "name": "Robo-Explorer Kit",
+        "info": "This interactive kit allows kids to build and program their own robot...",
+        "category": "Educational",
+        "price": 49.99,
+        "img_url": "https://example.com/images/robo-kit.jpg"
+    },
+    <!-- More toy objects... -->
+]
+    </pre>
+    
+    <h3>Endpoint</h3>
+    <p><code>POST /toys/addToy</code></p>
+    <h3>Params Parameters</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Heders</th>
+        
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>http://localhost:3001/toys/addToy</code></td>
+            <td>Add a toy</td>
+            <td>Required token</td>
+           
+          </tr>
+    
+               </tbody>
+    </table>
+    <h3>Example Post</h3>
+    <pre>
+[
+    {
+        "name": "Robo-Explorer Kit",
+        "info": "This interactive kit allows kids to build and program their own robot...",
+        "category": "Educational",
+        "price": 49.99,
+        "img_url": "https://example.com/images/robo-kit.jpg"
+    },
+    <!-- More toy objects... -->
+]
+    </pre>
+    <h3>Endpoint</h3>
+    <p><code>PUT /toys</code></p>
+    <h3>Params Parameters</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Heders</th>
+        
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>http://localhost:3001/toys/:id</code></td>
+            <td>update a toy by ID</td>
+            <td>Required token</td>
+           
+          </tr>
+    
+               </tbody>
+    </table>
+    <h3>Example Put</h3>
+    <pre>
+[
+    {
+        "name": "Robo-Explorer Kit",
+        "info": "This interactive kit allows kids to build and program their own robot...",
+        "category": "Educational",
+        "price": 49.99,
+        "img_url": "https://example.com/images/robo-kit.jpg"
+    },
+    <!-- More toy objects... -->
+]
+    </pre>
+    <h3>Endpoint</h3>
+    <p><code>DELETE /toys</code></p>
+    <h3>Params Parameters</h3>
+    <table class="table table-bordered">
+      <thead>
+          <tr>
+            
+              <th>Parameter</th>
+              <th>Description</th>
+              <th>Heders</th>
+      
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>http://localhost:3001/toys/:id</code></td>
+          <td>Dellete a toy by ID</td>
+          <td>Required token</td>
+         
+        </tr>
+  
+             </tbody>
+  </table>
+</div>
+</body>
+</html>
