@@ -10,15 +10,8 @@ const {
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  res.json({ msg: "users work 77777" });
-});
-
 router.get("/myInfo", auth, async (req, res) => {
-  // res.json({msg:"Info of user"})
   try {
-    // req.tokenData - מגיע מהפונקציית אוט שנמצאת בשרשור של הראוטר
-    // {password:0} - מסתיר את המאפיין
     const data = await UserModel.findOne(
       { _id: req.tokenData._id },
       { password: 0 }
@@ -30,7 +23,7 @@ router.get("/myInfo", auth, async (req, res) => {
   }
 });
 
-// הוספת משתמש
+// Add user
 router.post("/signUp", async (req, res) => {
   const validBody = validateUser(req.body);
   if (validBody.error) {
