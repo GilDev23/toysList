@@ -21,6 +21,7 @@
               
                 <th>Parameter</th>
                 <th>Description</th>
+                <th>Route(example)</th>
             </tr>
         </thead>
         <tbody>
@@ -28,30 +29,47 @@
             <tr>
                 <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys?limit=1">limit</a></code></td>
                 <td>Number of toys to retrieve per page (default is 5).</td>
+                <td><code>https://bored-goat-shorts.cyclic.cloud/toys?limit=1</code></td>
             </tr>
             <tr>
                 <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys?page=1">page</a></code></td>
                 <td>Page number (default is 1).</td>
+                <td><code>https://bored-goat-shorts.cyclic.cloud/toys?page=1</code></td>
             </tr>
             <tr>
                 <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys?sort=price">sort </a></code></td>
                 <td>Sort field (default is "_id").</td>
+                <td><code>https://bored-goat-shorts.cyclic.cloud/toys?sort=price</code></td>
             </tr>
             <tr>
                 <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys?sort=price&reverse=yes">reverse</a></code></td>
                 <td>Reverse sort order (set to "yes" to reverse, default is ascending).</td>
+                <td><code>https://bored-goat-shorts.cyclic.cloud/toys?sort=price&reverse=yes</code></td>
+
             </tr>
             <tr>
                 <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys?cat=educational">cat</a></code></td>
                 <td>Filter by toy category.</td>
+                <td><code>https://bored-goat-shorts.cyclic.cloud/toys?cat=educational</code></td>
+
             </tr>
             <tr>
               <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys?s=plush">s</a></code></td>
               <td>Search for toys by name or info.</td>
+              <td><code>https://bored-goat-shorts.cyclic.cloud/toys?s=plush</code></td>
+
           </tr>    
             <tr>
               <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys/price?min=10&max=40">/price?min&max</a></code></td>
               <td>Ability to receive products according to minimum and maximum price range</td>
+              <td><code>https://bored-goat-shorts.cyclic.cloud/toys/price?min=10&max=40</code></td>
+
+          </tr>    
+            <tr>
+              <td><code><a href="https://bored-goat-shorts.cyclic.cloud/toys/">/count</a></code></td>
+              <td>Returns the number of records in the collection</td>
+              <td><code>https://bored-goat-shorts.cyclic.cloud/toys/price?min=10&max=40</code></td>
+
           </tr>    
             </tbody>
     </table>
@@ -102,9 +120,9 @@ GET /toys?limit=10&page=2&sort=name&reverse=yes&cat=educational&s=robot
         <thead>
             <tr>
               
-                <th>Parameter</th>
+                <th>Route</th>
                 <th>Description</th>
-                <th>Heders</th>
+                <th>Headers</th>
         
             </tr>
         </thead>
@@ -138,9 +156,9 @@ GET /toys?limit=10&page=2&sort=name&reverse=yes&cat=educational&s=robot
         <thead>
             <tr>
               
-                <th>Parameter</th>
+                <th>Route</th>
                 <th>Description</th>
-                <th>Heders</th>
+                <th>Headers</th>
         
             </tr>
         </thead>
@@ -174,9 +192,9 @@ GET /toys?limit=10&page=2&sort=name&reverse=yes&cat=educational&s=robot
       <thead>
           <tr>
             
-              <th>Parameter</th>
+              <th>Route</th>
               <th>Description</th>
-              <th>Heders</th>
+              <th>Headers</th>
       
           </tr>
       </thead>
@@ -190,6 +208,81 @@ GET /toys?limit=10&page=2&sort=name&reverse=yes&cat=educational&s=robot
   
              </tbody>
   </table>
+  <h2 class="display-6">Users</h2>
+  <p class="">Create a user and logIn to get token</p>
+  <h3>Endpoint</h3>
+  <p><code>POST /users/signUp</code></p>
+  <h3>Required parameters</h3>
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+            
+              <th>Parameter</th>
+              <th>Route</th>
+              <th>Description</th>
+             
+      
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>signUp</code></td>
+          <td><code>https://bored-goat-shorts.cyclic.cloud/users/signUp</code></td>
+          <td>Register and create a user</td>
+          
+        
+        </tr>
+  
+             </tbody>
+  </table>
+  <h3>Example signUp</h3>
+  <pre>
+[
+  {
+    "name":"bibi netanyahu",
+    "email":"bibi@gmail.com",
+    "password":"123"
+  },
+  <!-- More toy objects... -->
+]
+  </pre>
+
+  <h3>Endpoint</h3>
+  <p><code>POST /users/logIn</code></p>
+  <h3>Required parameters</h3>
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+            
+              <th>Parameter</th>
+              <th>route</th>
+              <th>Description</th>
+             
+      
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>log in</code></td>
+          <td><code>https://bored-goat-shorts.cyclic.cloud/users/logIn</code></td>
+          <td>Entry and receiving a token</td>
+          
+        
+        </tr>
+  
+             </tbody>
+  </table>
+  <h3>Example signUp</h3>
+  <pre>
+[
+  {
+    "email":"bibi@gmail.com",
+    "password":"123"
+  },
+  <!-- More toy objects... -->
+]
+  </pre>
+
 </div>
 </body>
 </html>
